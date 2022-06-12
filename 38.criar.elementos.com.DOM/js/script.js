@@ -1,12 +1,27 @@
-// selecionar elemento
-var title = document.querySelector("#title");
-console.log(title);
+// cria elemento <p>
+var novoParagrafo = document.createElement("p");
+console.log(novoParagrafo);
 
-// alterar via innerHTML
-title.innerHTML = "Testando o texto alterado!";
+// cria o texto
+var texto = document.createTextNode("Este é o conteudo do paragrafo");
 
-// textContent -> é mais utilizado, recomendado e performance
-var subtitle = document.querySelector(".subtitle");
-console.log(subtitle);
+// inclui esse texto no elemento criado
+novoParagrafo.append(texto);
 
-subtitle.textContent = "Testando o textContent!";
+// busca o body da pagina
+var body = document.querySelector("body");
+console.log(body);
+
+// e no body, inclui esse novo elemento <p>
+body.appendChild(novoParagrafo);
+
+// inserindo num container...
+var container = document.getElementById("container");
+console.log(container);
+
+var el = document.createElement("span");
+el.appendChild(document.createTextNode("texto do span"));
+
+console.log(el);
+
+container.appendChild(el);
